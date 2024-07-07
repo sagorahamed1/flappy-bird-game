@@ -13,7 +13,6 @@ class MainMenuScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     game.pauseEngine();
     return Scaffold(
-        body: Scaffold(
             body: GestureDetector(
       onTap: () {
         game.overlays.remove('mainMenu');
@@ -28,8 +27,11 @@ class MainMenuScreen extends StatelessWidget {
             fit: BoxFit.cover,
           ),
         ),
-        child: Image.asset(Assets.message),
+        child: Padding(
+          padding: const EdgeInsets.all(80.0),
+          child: Image.asset(Assets.startButton, width: 200,height: 60),
+        ),
       ),
-    )));
+    ));
   }
 }

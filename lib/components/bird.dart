@@ -48,6 +48,7 @@ class Bird extends SpriteGroupComponent<BirdMovements>
   }
 
   void reset(){
+    gameRef.bird.score = 0;
     position = Vector2(50, gameRef.size.y / 2 - size.y / 2);
   }
 
