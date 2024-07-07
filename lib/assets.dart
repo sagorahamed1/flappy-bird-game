@@ -12,6 +12,7 @@ class Assets{
   static const menu = 'assets/images/menu.png';
   static const message = 'assets/images/message.png';
   static const gameOver = 'assets/images/gameover.png';
+  static const restart = 'assets/images/restart.png';
 
 
   static const flying = 'fly.wav';

@@ -1,4 +1,6 @@
 
+import 'package:flame/src/components/text_component.dart';
+import 'package:flame/src/text/renderers/text_renderer.dart';
 import 'package:flutter/material.dart';
 
 import '../assets.dart';
@@ -16,25 +18,38 @@ class GameOverScreen extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Text(
-            'Score: ${game.bird.score}',
-            style: const TextStyle(
-              fontSize: 60,
-              color: Colors.white,
-              fontFamily: 'Game',
+
+          Container(
+            height: 70,
+            width: 300,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(16),
+              color: Colors.deepOrangeAccent
+            ),
+
+            child: Center(
+              child: Text('SCORE : ${game.bird.score}', style: TextStyle(
+                color: Colors.white, fontSize: 40, fontWeight: FontWeight.w800
+              ),),
             ),
           ),
+
           const SizedBox(height: 20),
-          Image.asset(Assets.gameOver),
-          const SizedBox(height: 20),
-          ElevatedButton(
-            onPressed: onRestart,
-            style: ElevatedButton.styleFrom(backgroundColor: Colors.orange),
-            child: const Text(
-              'Restart',
-              style: TextStyle(fontSize: 20),
-            ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: Image.asset(Assets.gameOver,width: 300),
           ),
+          const SizedBox(height: 20),
+
+          GestureDetector(
+            onTap: onRestart,
+            child:  Padding(
+              padding:  const EdgeInsets.symmetric(horizontal: 20),
+              child: Image.asset(Assets.restart, height: 70, width: 250),
+            ),
+          )
+
+
         ],
       ),
     ),
